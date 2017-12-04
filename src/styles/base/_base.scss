@@ -23,9 +23,17 @@ button:disabled {
 .logo {
   width: 250px;
   @media screen and (max-width: 320px) {
-    margin-top: -90px;
+    margin-top: -50px;
   }
   @media screen and (max-width: 1200px) {
     margin-top: 0px;
   }
 }
+
+// .login-logo-text {
+//   font-family: 'Permanent Marker', cursive;
+//   font-size: 50px;
+
+//   // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+//   color: #FF5353
+// }
