@@ -1,0 +1,10 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true
+  },
+  "plugins": ["react", "jsx-a11y", "import", "class-property"],
+  "rules": {
+    "class-property/rule-name": 2
+  }
+}
