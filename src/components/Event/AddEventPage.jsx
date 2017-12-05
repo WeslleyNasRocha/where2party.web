@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import EventsForm from './EventsForm';
-import { startAddEvent } from '../../actions/events';
+import { startAddEvent, addEvent } from '../../actions/events';
 
 class AddEventPage extends Component {
   onSubmit = (event) => {
-    this.props.startAddEvent(event);
+    this.props.addEvent(event);
     this.props.history.push('/');
   };
   render() {
