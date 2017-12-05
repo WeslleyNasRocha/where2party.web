@@ -1,25 +1,31 @@
 import firebase from 'firebase';
 import { toast } from 'react-toastify';
+
 const authDefaultState = { user: '', redirect: {} };
 
 export default (state = authDefaultState, action) => {
   switch (action.type) {
     case 'LOGIN_FIREBASE':
-      const { email, password } = action.payload;
+    default:
+      return state;
+  }
+};
+
+/** const { email, password } = action.payload;
       firebase
         .app()
         .auth()
         .signInWithEmailAndPassword(email, password)
-        .then(snapshot => {
+        .then((snapshot) => {
           // console.log(snapshot);
           toast.success('Logado com sucesso');
           // localStorage.setItem('user', snapshot.)
           return {
             ...state,
-            user: firebase.auth().currentUser
+            user: firebase.auth().currentUser,
           };
         })
-        .catch(error => {
+        .catch((error) => {
           let msg = 'Erro desconhecido';
           switch (error.code) {
             case 'auth/invalid-email':
@@ -36,8 +42,4 @@ export default (state = authDefaultState, action) => {
           toast.error(msg, { position: toast.POSITION.TOP_CENTER });
 
           return state;
-        });
-    default:
-      return state;
-  }
-};
+        }); */

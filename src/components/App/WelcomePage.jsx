@@ -2,7 +2,7 @@ import React from 'react';
 
 const WelcomePage = () => (
   <div>
-    <p>Bem vindo ao meu portfolio</p>
+    <p>Bem vindo ao seu dashboard de eventos</p>
   </div>
 );
 
