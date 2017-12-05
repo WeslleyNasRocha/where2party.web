@@ -18,6 +18,9 @@ const Header = () => (
         <Link to="/report">
           <p>Relatorio</p>
         </Link>
+        <Link to="/login">
+          <p>Login</p>
+        </Link>
       </div>
     </nav>
   </header>
