@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import EventsForm from './EventsForm';
 import { connect } from 'react-redux';
-import { addEvent } from '../../actions/events';
+import EventsForm from './EventsForm';
+import { startAddEvent } from '../../actions/events';
 
 class AddEventPage extends Component {
-  onSubmit = event => {
-    this.props.addEvent(event);
+  onSubmit = (event) => {
+    this.props.startAddEvent(event);
     this.props.history.push('/');
   };
   render() {
@@ -23,7 +23,7 @@ class AddEventPage extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  addEvent: event => dispatch(addEvent(event)),
+  startAddEvent: event => dispatch(startAddEvent(event)),
 });
 
 export default connect(undefined, mapDispatchToProps)(AddEventPage);

@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 
 import WelcomePage from '../components/App/WelcomePage';
 import NotFoundPage from '../components/NotFoundPage';
-import EventsPage from '../components/App/EventsPage';
-import AddEventPage from '../components/App/AddEventPage';
+import EventsPage from '../components/Event/EventsPage';
+import AddEventPage from '../components/Event/AddEventPage';
 import Header from '../components/App/Header';
 import RelatorioPage from '../components/App/RelatorioPage';
 import LoginPage from '../components/Login/LoginPage';

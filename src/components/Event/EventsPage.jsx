@@ -5,7 +5,7 @@ import EventListItem from './EventListItem';
 
 const EventsPage = props => (
   <div>
-    {console.log(props.events)}
+    {props.events.lenght}
     {props.events.lenght === 0 ? (
       <p>sem eventos</p>
     ) : (
