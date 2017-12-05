@@ -1,19 +1,22 @@
 {
-  "name": "expensify",
+  "name": "where2party",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Andrew Mead",
+  "author": "Weslley Rocha",
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
     "build:dev": "webpack --env development",
     "build:prod": "webpack -p --env production",
     "dev": "webpack-dev-server --progress --colors --inline --hot",
-    "test": "jest"
+    "test": "jest",
+    "start": "node server/server.js",
+    "heroku-postbuild": "yarn build:prod"
   },
   "dependencies": {
     "admin-lte": "^2.4.2",
     "animated": "^0.2.1",
+    "express": "^4.16.2",
     "firebase": "^4.7.0",
     "font-awesome": "^4.7.0",
     "formik": "^0.10.5",
