@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Formik, Field, Form } from 'formik';
-import { Button } from 'react-bootstrap';
 import moment from 'moment';
-import DatePicker from 'react-bootstrap-date-picker';
+// import DatePicker from 'react-bootstrap-date-picker';
 import Yup from 'yup';
 
 class EventsForm extends Component {
@@ -101,14 +100,14 @@ class EventsForm extends Component {
                       Data
                     </label>
                     <div className="col-sm-10">
-                      <DatePicker
+                      {/* <DatePicker
                         name="data"
                         dateFormat="DD/MM/YYYY"
                         value={values.data}
                         onChange={(value) => {
                           setFieldValue('data', value);
                         }}
-                      />
+                      /> */}
                     </div>
                   </div>
                   <button type="submit" className="btn btn-info btn-block">

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render header correctly 1`] = `
+<header>
+  <h1>
+    Where 2 Party
+  </h1>
+  <nav>
+    <div>
+      <Link
+        replace={false}
+        to="/"
+      >
+        Dashboard
+      </Link>
+      <Link
+        replace={false}
+        to="/events"
+      >
+        Eventos
+      </Link>
+      <Link
+        replace={false}
+        to="/addEvent"
+      >
+        Adicionar Evento
+      </Link>
+      <Link
+        replace={false}
+        to="/report"
+      >
+        Relatorio
+      </Link>
+      <Link
+        replace={false}
+        to="/login"
+      >
+        Login
+      </Link>
+    </div>
+  </nav>
+</header>
+`;

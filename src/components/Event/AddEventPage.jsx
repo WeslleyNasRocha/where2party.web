@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import EventsForm from './EventsForm';
 import { startAddEvent, addEvent } from '../../actions/events';
 
-class AddEventPage extends Component {
+export class AddEventPage extends Component {
   onSubmit = (event) => {
     this.props.addEvent(event);
     this.props.history.push('/');

@@ -6,21 +6,11 @@ const Header = () => (
     <h1>Where 2 Party</h1>
     <nav>
       <div>
-        <Link to="/">
-          <p>Dashboard</p>
-        </Link>
-        <Link to="/events">
-          <p>Eventos</p>
-        </Link>
-        <Link to="/addEvent">
-          <p>Adicionar Evento</p>
-        </Link>
-        <Link to="/report">
-          <p>Relatorio</p>
-        </Link>
-        <Link to="/login">
-          <p>Login</p>
-        </Link>
+        <Link to="/">Dashboard</Link>
+        <Link to="/events">Eventos</Link>
+        <Link to="/addEvent">Adicionar Evento</Link>
+        <Link to="/report">Relatorio</Link>
+        <Link to="/login">Login</Link>
       </div>
     </nav>
   </header>

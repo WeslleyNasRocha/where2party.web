@@ -11,8 +11,8 @@ const filterReducer = (state = filterReducerDefaultState, action) => {
   switch (action.type) {
     case 'SET_TEXT_FILTER':
       return { ...state, text: action.text };
-    case 'SET_SORT_BY_AMOUNT_FILTER':
-      return { ...state, sortBy: action.sortBy };
+    // case 'SET_SORT_BY_AMOUNT_FILTER':
+    //   return { ...state, sortBy: action.sortBy };
     case 'SET_SORT_BY_DATE_FILTER':
       return { ...state, sortBy: action.sortBy };
     case 'SET_START_DATE_FILTER':
