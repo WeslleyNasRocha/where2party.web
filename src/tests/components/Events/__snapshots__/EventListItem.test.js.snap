@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render eventlistitem correctly 1`] = `
+<div>
+  <Link
+    replace={false}
+    to="/edit/1"
+  >
+    <h3>
+      Chacrinha
+    </h3>
+  </Link>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vulputate mi in turpis dapibus facilisis.
+  </p>
+  <p />
+  <p>
+    10/01/17
+  </p>
+  <p>
+    X2e8wZADnwhU3EonNmH6ppqO9g73++1505237223764.jpeg
+  </p>
+  <p>
+    X2e8wZADnwhU3EonNmH6ppqO9g73
+  </p>
+  <p />
+</div>
+`;

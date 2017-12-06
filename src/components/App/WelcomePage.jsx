@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WelcomePage = () => (
+export const WelcomePage = () => (
   <div>
     <p>Bem vindo ao seu dashboard de eventos</p>
   </div>

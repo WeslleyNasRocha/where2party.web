@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RelatorioPage = () => (
+export const RelatorioPage = () => (
   <div>
     <p>RelatorioPage</p>
   </div>

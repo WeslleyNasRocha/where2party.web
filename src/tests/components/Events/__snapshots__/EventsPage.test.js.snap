@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render eventspage with events 1`] = `
+<div>
+  <EventListItem
+    address="Av. Comendador Enzo Ferrari, 228 - Swift, Campinas - SP, Brazil"
+    data="10/01/17"
+    descricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vulputate mi in turpis dapibus facilisis."
+    id="1"
+    image="X2e8wZADnwhU3EonNmH6ppqO9g73++1505237223764.jpeg"
+    key="1"
+    local={
+      Object {
+        "latitude": -22.925993333333334,
+        "latitudeDelta": 0.015,
+        "longitude": -47.03723,
+        "longitudeDelta": 0.0121,
+      }
+    }
+    orgId="X2e8wZADnwhU3EonNmH6ppqO9g73"
+    titulo="Chacrinha"
+  />
+  <EventListItem
+    address="Av. Comendador Enzo Ferrari, 228 - Swift, Campinas - SP, Brazil"
+    data="30/12/17"
+    descricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vulputate mi in turpis dapibus facilisis."
+    id="2"
+    image="X2e8wZADnwhU3EonNmH6ppqO9g73++1505237223764.jpeg"
+    key="2"
+    local={
+      Object {
+        "latitude": -22.925993333333334,
+        "latitudeDelta": 0.015,
+        "longitude": -47.03723,
+        "longitudeDelta": 0.0121,
+      }
+    }
+    orgId="X2e8wZADnwhU3EonNmH6ppqO9g73"
+    titulo="Rolezão"
+  />
+  <EventListItem
+    address="Av. Comendador Enzo Ferrari, 228 - Swift, Campinas - SP, Brazil"
+    data="21/11/18"
+    descricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vulputate mi in turpis dapibus facilisis."
+    id="3"
+    image="X2e8wZADnwhU3EonNmH6ppqO9g73++1505237223764.jpeg"
+    key="3"
+    local={
+      Object {
+        "latitude": -22.925993333333334,
+        "latitudeDelta": 0.015,
+        "longitude": -47.03723,
+        "longitudeDelta": 0.0121,
+      }
+    }
+    orgId="X2e8wZADnwhU3EonNmH6ppqO9g73"
+    titulo="Festa na piscina"
+  />
+</div>
+`;
+
+exports[`should render eventspage without events 1`] = `
+<div>
+  <p>
+    sem eventos
+  </p>
+</div>
+`;

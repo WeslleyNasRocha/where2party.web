@@ -1,6 +1,7 @@
 const eventReducerDefaultState = [];
 
 const eventReducer = (state = eventReducerDefaultState, action) => {
+  // console.log(action.type, action);
   switch (action.type) {
     case 'ADD_EVENT':
       return [...state, action.event];
@@ -16,6 +17,9 @@ const eventReducer = (state = eventReducerDefaultState, action) => {
         }
         return event;
       });
+    case 'SET_EVENTS':
+      return action.events;
+    // return ['carai'];
     default:
       return state;
   }

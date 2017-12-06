@@ -70,7 +70,7 @@ module.exports = (env) => {
         },
       ],
     },
-    devtool: isProd ? 'source-map' : 'inline-source-map',
+    devtool: isProd ? 'hidden-source-map' : 'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
       historyApiFallback: true,

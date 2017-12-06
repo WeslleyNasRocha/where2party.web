@@ -1,45 +1,40 @@
-import uuid from 'uuid';
+import { toast } from 'react-toastify';
 import database from '../firebase/firebase';
 
-export const addEvent = ({
-  descricao, titulo, local, data, image, orgId, address, createdAt = 0,
-} = {}) => ({
+export const addEvent = event => ({
   type: 'ADD_EVENT',
-  event: {
-    id: uuid(),
-    descricao,
-    address,
-    titulo,
-    local,
-    data,
-    image,
-    orgId,
-    createdAt,
-  },
+  event,
 });
 
-// export const addEvent = event => ({
-//   type: 'ADD_EVENT',
-//   event,
-// });
-
-const startAddEvent = (eventData = {}) => (dispatch) => {
+export const startAddEvent = (eventData = {}) => (dispatch) => {
+  // const {
+  //   descricao, titulo, local, data, image, orgId, address,
+  // } = eventData;
+  // const event = {
+  //   descricao,
+  //   titulo,
+  //   local,
+  //   data,
+  //   image,
+  //   orgId,
+  //   address,
+  // };
   const {
-    descricao, titulo, local, data, image, orgId, address,
+    Titulo, Descricao, Address, Data, Local,
   } = eventData;
   const event = {
-    descricao,
-    titulo,
-    local,
-    data,
-    image,
-    orgId,
-    address,
+    Titulo,
+    Descricao,
+    Address,
+    Data,
+    Local,
   };
+  console.log(eventData);
   database
-    .ref('events')
+    .ref('eventos')
     .push(event)
     .then((ref) => {
+      toast.success('Evento Adicionado com sucesso');
       dispatch(addEvent({
         id: ref.key,
         ...event,
@@ -57,3 +52,25 @@ export const editEvent = (id, updates) => ({
   id,
   updates,
 });
+
+export const setEvents = events => ({
+  type: 'SET_EVENTS',
+  events,
+});
+
+export const startSetEvent = () => dispatch =>
+  database
+    .ref('eventos')
+    .once('value')
+    .then((snapshot) => {
+      const events = [];
+
+      snapshot.forEach((childSnapshot) => {
+        events.push({
+          id: childSnapshot.key,
+          ...childSnapshot.val(),
+        });
+      });
+
+      dispatch(setEvents(events));
+    });
