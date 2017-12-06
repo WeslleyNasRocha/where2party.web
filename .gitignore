@@ -1,5 +1,5 @@
 *.log
-node_modules/
-public/assets/
-public/scripts/
-public/css/
+node_modules/*
+public/assets/*
+public/scripts/*
+public/css/*
