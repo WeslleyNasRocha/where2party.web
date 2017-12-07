@@ -8,11 +8,8 @@ import { startAddEvent, addEvent } from '../../actions/events';
 export class AddEventPage extends Component {
   onSubmit = (event) => {
     this.props.startAddEvent(event);
-    // .then(() => {
-    //   // this.props.history.push('/events');
-    //   console.log('foi');
-    // })
-    // .catch(e => console.log(e));
+
+    this.props.history.push('/events');
   };
   render() {
     return (

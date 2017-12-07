@@ -1,11 +1,21 @@
 html {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
   font-size: 62.5%;
 }
 
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: $m-size;
-  background-color: $primary;
+  // background-color: $primary;
+  margin: 0px;
+  min-height: 100%;
+  width: 100%;
+}
+
+.sidebar-toggle::before {
+  display: none;
 }
 
 button {

@@ -40,126 +40,131 @@ export const EventsForm = props => (
             })
             .catch(error => toast.error(error));
         }}
-        // validationSchema={Yup.object().shape({
-        //   titulo: Yup.string()
-        //     .min(5)
-        //     .required(),
-        //   description: Yup.string()
-        //     .min(10)
-        //     .max(250),
-        // })}
+        validationSchema={Yup.object().shape({
+          Titulo: Yup.string()
+            .min(5)
+            .required(),
+          Description: Yup.string()
+            .min(10)
+            .max(250),
+          Address: Yup.string().required(),
+          Data: Yup.date().required(),
+        })}
         render={({
  touched, errors, values, setFieldValue, setTouched,
-}) => (
-  <Form>
-    <div className="form-group">
-      <label htmlFor="Titulo" className="col-sm-2 control-label">
-                Titulo
-      </label>
+}) => {
+          console.log(errors);
+          return (
+            <Form>
+              <div className="form-group">
+                <label htmlFor="Titulo" className="col-sm-2 control-label">
+                  Titulo
+                </label>
 
-      <div className="col-sm-10">
-        <Field
-          type="Text"
-          name="Titulo"
-          className="form-control"
-          id="Titulo"
-          placeholder="Titulo"
-        />
-      </div>
-      {touched.Titulo &&
-                errors.Titulo && (
-                  <div style={{ marginTop: 10 }} className="alert alert-danger" role="alert">
-                    <p>{errors.Titulo}</p>
-                  </div>
-                )}
-    </div>
-    <div className="form-group">
-      <label htmlFor="Descricao" className="col-sm-2 control-label">
-                Descrição
-      </label>
-      <div className="col-sm-10">
-        <Field
-          name="Descricao"
-          id="Descricao"
-          type="text"
-          className="form-control"
-          placeholder="Descrição"
-        />
-      </div>
-      {touched.Descricao &&
-                errors.Descricao && (
-                  <div style={{ marginTop: 10 }} className="alert alert-danger" role="alert">
-                    <p>{errors.Descricao}</p>
-                  </div>
-                )}
-    </div>
-    <div className="form-group">
-      <label htmlFor="Data" className="col-sm-2 control-label">
-                Data
-      </label>
-      <div className="col-sm-10">
-        <DatePicker
-          name="Data"
-          dateFormat="DD/MM/YYYY"
-          value={values.Data}
-          onChange={(value) => {
-                    setTouched('Data', true);
-                    setFieldValue('Data', value.format('DD/MM/YY'));
-                  }}
-        />
-      </div>
-    </div>
-    <div className="form-group">
-      <label htmlFor="Address" className="col-sm-2 control-label">
-                Endereço
-      </label>
-      <div className="col-sm-10">
-        <PlacesAutocomplete
-          inputProps={{
-                    value: values.Address,
-                    onChange: address => setFieldValue('Address', address),
-                  }}
-          style={{
-                    autocompleteContainer: {
-                      position: 'absolute',
-                      top: '100%',
-                      backgroundColor: 'white',
-                      border: '1px solid #555555',
-                      width: '100%',
-                    },
-                    autocompleteItem: {
-                      backgroundColor: '#ffffff',
-                      padding: '10px',
-                      color: '#555555',
-                      cursor: 'pointer',
-                    },
-                    autocompleteItemActive: {
-                      backgroundColor: '#fafafa',
-                    },
-                    googleLogoContainer: {
-                      textAlign: 'right',
-                      padding: '1px',
-                      backgroundColor: '#fafafa',
-                    },
-                    googleLogoImage: {
-                      width: 150,
-                    },
-                  }}
-        />
-      </div>
-      {touched.Address &&
-                errors.Address && (
-                  <div style={{ marginTop: 10 }} className="alert alert-danger" role="alert">
-                    <p>{errors.Address}</p>
-                  </div>
-                )}
-    </div>
+                <div className="col-sm-10">
+                  <Field
+                    type="Text"
+                    name="Titulo"
+                    className="form-control"
+                    id="Titulo"
+                    placeholder="Titulo"
+                  />
+                </div>
+                {touched.Titulo &&
+                  errors.Titulo && (
+                    <div style={{ marginTop: 10 }} className="alert alert-danger" role="alert">
+                      <p>{errors.Titulo}</p>
+                    </div>
+                  )}
+              </div>
+              <div className="form-group">
+                <label htmlFor="Descricao" className="col-sm-2 control-label">
+                  Descrição
+                </label>
+                <div className="col-sm-10">
+                  <Field
+                    name="Descricao"
+                    id="Descricao"
+                    type="text"
+                    className="form-control"
+                    placeholder="Descrição"
+                  />
+                </div>
+                {touched.Descricao &&
+                  errors.Descricao && (
+                    <div style={{ marginTop: 10 }} className="alert alert-danger" role="alert">
+                      <p>{errors.Descricao}</p>
+                    </div>
+                  )}
+              </div>
+              <div className="form-group">
+                <label htmlFor="Data" className="col-sm-2 control-label">
+                  Data
+                </label>
+                <div className="col-sm-10">
+                  <DatePicker
+                    name="Data"
+                    dateFormat="DD/MM/YYYY"
+                    value={values.Data}
+                    onChange={(value) => {
+                      setTouched('Data', true);
+                      setFieldValue('Data', value.format('DD/MM/YY'));
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="form-group">
+                <label htmlFor="Address" className="col-sm-2 control-label">
+                  Endereço
+                </label>
+                <div className="col-sm-10">
+                  <PlacesAutocomplete
+                    inputProps={{
+                      value: values.Address,
+                      onChange: address => setFieldValue('Address', address),
+                    }}
+                    style={{
+                      autocompleteContainer: {
+                        position: 'absolute',
+                        top: '100%',
+                        backgroundColor: 'white',
+                        border: '1px solid #555555',
+                        width: '100%',
+                      },
+                      autocompleteItem: {
+                        backgroundColor: '#ffffff',
+                        padding: '10px',
+                        color: '#555555',
+                        cursor: 'pointer',
+                      },
+                      autocompleteItemActive: {
+                        backgroundColor: '#fafafa',
+                      },
+                      googleLogoContainer: {
+                        textAlign: 'right',
+                        padding: '1px',
+                        backgroundColor: '#fafafa',
+                      },
+                      googleLogoImage: {
+                        width: 150,
+                      },
+                    }}
+                  />
+                </div>
+                {touched.Address &&
+                  errors.Address && (
+                    <div style={{ marginTop: 10 }} className="alert alert-danger" role="alert">
+                      <p>{errors.Address}</p>
+                    </div>
+                  )}
+              </div>
 
-    <button type="submit" className="btn btn-info btn-block">
-              save
-    </button>
-  </Form>
-        )}
+              <button type="submit" className="btn btn-info btn-block">
+                save
+              </button>
+            </Form>
+          );
+        }}
       />
     </div>
   </div>
