@@ -7,7 +7,9 @@ export const EventListItem = ({
   <div>
     <div className="box box-widget widget-user">
       {/* <Link to={`/edit/${id}`}> */}
-      <h3>{Titulo}</h3>
+      <Link to={`/edit/${id}`}>
+        <h3>{Titulo}</h3>
+      </Link>
       {/* </Link> */}
       <p>Descricao: {Descricao}</p>
       <p>Data: {Data}</p>

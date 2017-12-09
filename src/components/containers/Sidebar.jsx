@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Icon from 'react-icons-kit';
-import { ticket, home, plus, clipboard } from 'react-icons-kit/icomoon'
+import { ticket, home, plus, clipboard } from 'react-icons-kit/icomoon';
 
 const SideBarLink = (props) => {
   const isActive = location.pathname === props.to;
@@ -26,7 +26,7 @@ const SideBar = () => (
       <ul className="sidebar-menu tree" data-widget="tree">
         <li className="header">Navegação</li>
 
-        <SideBarLink to="/" label="Home" icon={home} />
+        <SideBarLink to="/dashboard" label="Home" icon={home} />
 
         <SideBarLink to="/events" label="Pagina de eventos" icon={ticket} />
         <SideBarLink to="/addEvent" label="Adicionar evento" icon={plus} />

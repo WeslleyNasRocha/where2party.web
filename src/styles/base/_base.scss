@@ -8,7 +8,7 @@ html {
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: $m-size;
-  // background-color: $primary;
+  background-color: $primary;
   margin: 0px;
   min-height: 100%;
   width: 100%;
@@ -32,14 +32,17 @@ button:disabled {
 
 .logo {
   width: 250px;
-  @media screen and (max-width: 320px) {
-    margin-top: -50px;
-  }
-  @media screen and (max-width: 1200px) {
-    margin-top: 0px;
-  }
 }
 
 .form-group {
   padding-bottom: 30px;
+}
+
+.login-page {
+  margin-top: -90px;
+  height: 100%;
+  background-color: $primary;
+  @media (max-width: 768px) {
+    margin-top: -50px;
+  }
 }

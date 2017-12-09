@@ -13,7 +13,7 @@ export class AddEventPage extends Component {
   };
   render() {
     return (
-      <div className="col-md-6">
+      <div className="col-md-10">
         <div className="box box-success">
           <div className="box-header with-border">
             <h2 className="box-title">Add Event Page</h2>

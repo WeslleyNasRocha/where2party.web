@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Icon from 'react-icons-kit';
 import { thMenuOutline, userOutline } from 'react-icons-kit/typicons';
 
-const Header = () => (
+import { startLogout, startLogin } from '../../actions/auth';
+
+const Header = ({ startLogout }) => (
   <header className="main-header">
-    <Link to="/" className="logo">
+    <Link to="/dashboard" className="logo">
       <span className="logo-mini">
         <b>W</b>2<b>P</b>
       </span>
@@ -14,7 +17,13 @@ const Header = () => (
     </Link>
     <nav className="navbar navbar-static-top">
       {/* <!-- Sidebar toggle button--> */}
-      <a href="#" className="sidebar-toggle" data-toggle="push-menu" role="button">
+      <a
+        style={{ height: 50 }}
+        href="#"
+        className="sidebar-toggle"
+        data-toggle="push-menu"
+        role="button"
+      >
         {/* <span className="sr-only">Toggle navigation</span> */}
         <Icon icon={thMenuOutline} />
       </a>
@@ -63,14 +72,14 @@ const Header = () => (
                   </a>
                 </div>
                 <div className="pull-right">
-                  <a href="#" className="btn btn-default btn-flat">
+                  <button onClick={startLogout} className="btn btn-default btn-flat">
                     Sair
-                  </a>
+                  </button>
                 </div>
               </li>
             </ul>
           </li>
-          {/* <!-- Control Sidebar Toggle Button --> */}          
+          {/* <!-- Control Sidebar Toggle Button --> */}
         </ul>
       </div>
     </nav>
@@ -82,4 +91,8 @@ const Header = () => (
   </header>
 );
 
-export default Header;
+const mapDispatchToProps = dispatch => ({
+  startLogout: () => dispatch(startLogout()),
+});
+
+export default connect(undefined, mapDispatchToProps)(Header);

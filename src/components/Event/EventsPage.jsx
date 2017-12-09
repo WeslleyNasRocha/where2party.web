@@ -14,7 +14,6 @@ export const EventsPage = props => (
 );
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     events: state.events,
   };

@@ -47,11 +47,31 @@ export const removeEvent = ({ id } = {}) => ({
   id,
 });
 
+export const startRemoveEvent = ({ id } = {}) => dispatch =>
+  database
+    .ref(`eventos/${id}`)
+    .remove()
+    .then(() => {
+      toast.success('Evento deletado com sucesso');
+      dispatch(removeEvent({ id }));
+    });
+
 export const editEvent = (id, updates) => ({
   type: 'EDIT_EVENT',
   id,
   updates,
 });
+
+export const startEditEvent = (updates, id) => (dispatch) => {
+  database
+    .ref(`eventos/${id}`)
+    .set(updates)
+    .then(() => {
+      toast.success('Evento atualizado com sucesso');
+      console.log(id, updates);
+      dispatch(editEvent(id, updates));
+    });
+};
 
 export const setEvents = events => ({
   type: 'SET_EVENTS',
