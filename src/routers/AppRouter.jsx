@@ -12,6 +12,7 @@ import RelatorioPage from '../components/App/RelatorioPage';
 import LoginPage from '../components/Login/LoginPage';
 
 import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 
 export const history = createHistory();
 
@@ -19,7 +20,7 @@ const AppRouter = () => (
   <Router history={history}>
     <div>
       <Switch>
-        <Route exact path="/" component={LoginPage} />
+        <PublicRoute exact path="/" component={LoginPage} />
         <PrivateRoute path="/dashboard" component={WelcomePage} />
         <PrivateRoute path="/events" component={EventsPage} />
         <PrivateRoute path="/addEvent" component={AddEventPage} />

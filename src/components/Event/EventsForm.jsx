@@ -56,7 +56,10 @@ export const EventsForm = props => (
         .min(10)
         .max(250),
       Address: Yup.string().required(),
-      Data: Yup.date().required(),
+      Data: Yup.date()
+        .min(moment())
+        .format('DD/MM/YY')
+        .required(),
     })}
     render={({
  touched, errors, values, setFieldValue, setTouched,
@@ -120,6 +123,12 @@ export const EventsForm = props => (
                   }}
             />
           </div>
+          {touched.Data &&
+                errors.Data && (
+                  <div style={{ marginTop: 10 }} className="alert alert-danger" role="alert">
+                    <p>{errors.Data}</p>
+                  </div>
+                )}
         </div>
         <div className="form-group">
           <label htmlFor="Address" className="col-sm-2 control-label">

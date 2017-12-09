@@ -7,11 +7,19 @@ import Sidebar from '../components/containers/Sidebar';
 
 const PrivateRoute = ({ isAuthenticated, component: Component, ...rest }) => (
   <div className="content-wrapper">
-    <Header />
-    <Sidebar />
     <Route
       {...rest}
-      component={props => (isAuthenticated ? <Component {...props} /> : <Redirect to="/" />)}
+      component={props =>
+        (isAuthenticated ? (
+          <div>
+            <Header />
+            <Sidebar />
+            <Component {...props} />
+          </div>
+        ) : (
+          <Redirect to="/" />
+        ))
+      }
     />
   </div>
 );

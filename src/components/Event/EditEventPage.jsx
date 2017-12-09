@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { Link } from 'react-router-dom';
+import Icon from 'react-icons-kit';
+import { home, ticket } from 'react-icons-kit/icomoon';
+
 import EventsForm from './EventsForm';
 
 import { startEditEvent, startRemoveEvent } from '../../actions/events';
@@ -18,13 +22,40 @@ export class EditEventPage extends Component {
   };
   render() {
     return (
-      <div className="col-md-10">
-        <div className="box box-warning">
-          <div className="box-header with-border">
-            <h2 className="box-title">Editar Evento</h2>
+      <div>
+        <section className="content-header">
+          <h1>
+            Editar evento:
+            <small> {this.props.evento.Titulo}</small>
+          </h1>
+          <ol className="breadcrumb">
+            <li>
+              <Link to="/">
+                <Icon icon={home} /> Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/eventos">
+                <Icon icon={ticket} /> Eventos
+              </Link>
+            </li>
+            <li className="active">edição</li>
+          </ol>
+        </section>
+        <section className="content">
+          <div className="col-md-10">
+            <div className="box box-warning">
+              <div className="box-header with-border">
+                <h2 className="box-title">Editar Evento</h2>
+              </div>
+              <EventsForm
+                submit={this.onSubmit}
+                evento={this.props.evento}
+                remove={this.onRemove}
+              />
+            </div>
           </div>
-          <EventsForm submit={this.onSubmit} evento={this.props.evento} remove={this.onRemove} />
-        </div>
+        </section>
       </div>
     );
   }
