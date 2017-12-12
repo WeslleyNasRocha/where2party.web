@@ -14,7 +14,7 @@ export const startLogin = (email, password) => () => {
     .catch((e) => {
       switch (e.code) {
         case 'auth/user-not-found':
-          erro = 'Usuario não encontrado';
+          erro = 'Usuario não encontrado! Tenha certeza de que seu usuário está cadastrado no APP';
           break;
         case 'auth/wrong-password':
           erro = 'Usuario ou senha invalidos';
