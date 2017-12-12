@@ -1,5 +1,5 @@
 import { toast } from 'react-toastify';
-import database from '../firebase/firebase';
+import database, { firebase } from '../firebase/firebase';
 
 export const addEvent = event => ({
   type: 'ADD_EVENT',
@@ -11,13 +11,13 @@ export const startAddEvent = (eventData = {}) => (dispatch) => {
   //   descricao, titulo, local, data, image, orgId, address,
   // } = eventData;
   // const event = {
-  //   descricao,
-  //   titulo,
-  //   local,
-  //   data,
+  // //   descricao,
+  // //   titulo,
+  // //   local,
+  // //   data,
   //   image,
-  //   orgId,
-  //   address,
+  // //   orgId,
+  // //   address,
   // };
   const {
     Titulo, Descricao, Address, Data, Local,
@@ -28,6 +28,7 @@ export const startAddEvent = (eventData = {}) => (dispatch) => {
     Address,
     Data,
     Local,
+    orgId: firebase.auth().currentUser.uid,
   };
   console.log(eventData);
   database
@@ -86,11 +87,13 @@ export const startSetEvent = () => dispatch =>
       const events = [];
 
       snapshot.forEach((childSnapshot) => {
-        events.push({
-          id: childSnapshot.key,
-          ...childSnapshot.val(),
-        });
+        const event = childSnapshot.val();
+        if (event.orgId === firebase.auth().currentUser.uid) {
+          events.push({
+            id: childSnapshot.key,
+            ...event,
+          });
+        }
       });
-
       dispatch(setEvents(events));
     });

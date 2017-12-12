@@ -8,7 +8,7 @@ html {
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: $m-size;
-  background-color: $primary;
+  background-color: #ecf0f5;
   margin: 0px;
   min-height: 100%;
   width: 100%;
@@ -45,4 +45,14 @@ button:disabled {
   @media (max-width: 768px) {
     margin-top: -50px;
   }
+}
+
+.not-found-page {
+  background-color: #d2d6de;
+  border-radius: 15px;
+  @include centerer;
+}
+
+.centeredBox {
+  @include centerer;
 }
