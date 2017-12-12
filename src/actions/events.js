@@ -44,7 +44,7 @@ export const startAddEvent = (eventData = {}) => (dispatch) => {
 
 export const removeEvent = ({ id } = {}) => ({
   type: 'REMOVE_EVENT',
-  id,
+  id
 });
 
 export const startRemoveEvent = ({ id } = {}) => dispatch =>
@@ -59,7 +59,7 @@ export const startRemoveEvent = ({ id } = {}) => dispatch =>
 export const editEvent = (id, updates) => ({
   type: 'EDIT_EVENT',
   id,
-  updates,
+  updates
 });
 
 export const startEditEvent = (updates, id) => (dispatch) => {
