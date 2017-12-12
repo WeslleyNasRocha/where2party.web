@@ -83,11 +83,6 @@ const LoginPage = props => (
             </Form>
           )}
         />
-
-        <br />
-        <a href="#" className="text-center">
-          Register a new membership
-        </a>
       </div>
       {/* <!-- /.login-box-body --> */}
     </div>
