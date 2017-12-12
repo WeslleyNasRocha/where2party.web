@@ -50,16 +50,16 @@ export const EventsForm = props => (
     }}
     validationSchema={Yup.object().shape({
       Titulo: Yup.string()
-        .min(5)
-        .required(),
+        .min(5, 'O Titulo deve ser de no mínimo 5 caracteres')
+        .required('O Titulo é um campo requerido'),
       Description: Yup.string()
-        .min(10)
-        .max(250),
-      Address: Yup.string().required(),
+        .min(10, 'A descrição deve ser de no mínimo 10 caracteres')
+        .max(250, 'A descrição deve ser de no máximo 250 caracteres'),
+      Address: Yup.string().required('O endereço é um campo requerido'),
       Data: Yup.date()
-        .min(moment())
+        .min(moment(), 'A data deve ser maior que o dia de Hoje')
         .format('DD/MM/YY')
-        .required(),
+        .required('A data é um campo requerido'),
     })}
     render={({
  touched, errors, values, setFieldValue, setTouched,
