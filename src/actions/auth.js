@@ -6,14 +6,31 @@ export const login = uid => ({
   uid,
 });
 
-export const startLogin = (email, password) => () =>
-  firebase
+export const startLogin = (email, password) => () => {
+  let erro = null;
+  return firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
-    .then(toast.success('Logado com sucesso'))
     .catch((e) => {
-      toast.error(e);
+      switch (e.code) {
+        case 'auth/user-not-found':
+          erro = 'Usuario não encontrado';
+          break;
+        case 'auth/wrong-password':
+          erro = 'Usuario ou senha invalidos';
+          break;
+        default:
+          erro = e.message;
+          break;
+      }
+      toast.error(erro);
+    })
+    .then(() => {
+      if (!erro) {
+        toast.success('logado com sucesso');
+      }
     });
+};
 
 export const logout = () => ({
   type: 'LOGOUT',
