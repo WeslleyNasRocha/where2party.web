@@ -1,25 +1,22 @@
 import React from 'react';
+import { render } from 'react-dom';
+import { Chart } from 'react-google-charts';
 
-import Icon from 'react-icons-kit';
-import { home, clipboard } from 'react-icons-kit/icomoon';
-
-export const RelatorioPage = () => (
-  <div>
-    <section className="content-header">
-      <h1>Homepage</h1>
-      <ol className="breadcrumb">
-        <li className="active">
-          <Icon icon={home} /> Home
-        </li>
-        <li>
-          <Icon icon={clipboard} /> Relatorios
-        </li>
-      </ol>
-    </section>
-    <section className="content">
-      <p>RelatorioPage</p>
-    </section>
-  </div>
-);
-
-export default RelatorioPage;
+export default class App extends React.Component {
+  render() {
+    return (
+      <div className={'grafico-de-acessos'}>
+        <Chart
+          chartType="LineChart"
+          data={[['Data', 'Confirmações'], [8, 12], [4, 5.5]]}
+          options={{}}
+          graph_id="LineChart"
+          width="100%"
+          height="400px"
+          legend_toggle
+        />
+      </div>
+    );
+  }
+}
+render(<App />, document.querySelector('#app'));
