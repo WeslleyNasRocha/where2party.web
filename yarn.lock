@@ -4516,10 +4516,6 @@ jvectormap@^1.2.2:
   dependencies:
     jquery ">=1.5"
 
-keycode@^2.1.2:
-  version "2.1.9"
-  resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.1.9.tgz#964a23c54e4889405b4861a5c9f0480d45141dfa"
-
 killable@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/killable/-/killable-1.0.0.tgz#da8b84bd47de5395878f95d64d02f2449fe05e6b"
@@ -5854,12 +5850,6 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types-extra@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/prop-types-extra/-/prop-types-extra-1.0.1.tgz#a57bd4810e82d27a3ff4317ecc1b4ad005f79a82"
-  dependencies:
-    warning "^3.0.0"
-
 prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
@@ -6107,13 +6097,6 @@ react-modal@^2.2.2:
 react-onclickoutside@^6.6.3:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.7.0.tgz#997a4d533114c9a0a104913638aa26afc084f75c"
-
-react-overlays@^0.7.4:
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-0.7.4.tgz#8649d539837e7c6f47bc9b24c9cf57a404e199a1"
-  dependencies:
-    popper.js "^1.12.5"
-    prop-types "^15.5.10"
 
 react-places-autocomplete@^5.4.3:
   version "5.4.3"
@@ -7028,8 +7011,8 @@ string_decoder@~0.10.x:
   resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
 
 stringstream@~0.0.4, stringstream@~0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/stringstream/-/stringstream-0.0.5.tgz#4e484cd4de5a0bbbee18e46307710a8a81621878"
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/stringstream/-/stringstream-0.0.6.tgz#7880225b0d4ad10e30927d167a1d6f2fd3b33a72"
 
 strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   version "3.0.1"
