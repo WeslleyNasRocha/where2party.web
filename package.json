@@ -41,7 +41,7 @@
     "react": "16.0.0",
     "react-bootstrap": "^0.31.5",
     "react-datepicker": "^0.61.0",
-    "react-dom": "16.0.0",
+    "react-dom": "16.0.1",
     "react-fontawesome": "^1.6.1",
     "react-form": "^2.12.1",
     "react-google-maps": "^9.4.2",
