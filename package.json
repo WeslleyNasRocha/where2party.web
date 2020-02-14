@@ -59,7 +59,7 @@
     "uuid": "^3.1.0",
     "validator": "^8.0.0",
     "webpack": "^3.1.0",
-    "yarn": "^1.17.3",
+    "yarn": "^1.22.0",
     "yup": "^0.23.0"
   },
   "devDependencies": {
